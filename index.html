@@ -4,15 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3D Solar System</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="css/styles.css"> <!-- Link to your CSS file -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof jQuery == 'undefined') { 
+            document.write(unescape("%3Cscript src='js/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));
+        }
+    </script>
+    <script src="js/prefixfree.min.js"></script>
+    <script src="js/scripts.min.js" defer></script> <!-- Use defer for better performance -->
 </head>
 <body class="opening hide-UI view-2D zoom-large data-close controls-close">
-    <div id="navbar">
+    <nav id="navbar">
         <a id="toggle-data" href="#data"><i class="icon-data"></i>Data</a>
         <h1>3D Solar System</h1>
         <a id="toggle-controls" href="#controls"><i class="icon-controls"></i>Controls</a>
-    </div>
-    <div id="data">
+    </nav>
+    <section id="data" aria-labelledby="data-title">
+        <h2 id="data-title">Planets</h2>
         <a class="sun" title="sun" href="#sunspeed">Sun</a>
         <a class="mercury" title="mercury" href="#mercuryspeed">Mercury</a>
         <a class="venus" title="venus" href="#venusspeed">Venus</a>
@@ -22,13 +31,14 @@
         <a class="saturn" title="saturn" href="#saturnspeed">Saturn</a>
         <a class="uranus" title="uranus" href="#uranusspeed">Uranus</a>
         <a class="neptune" title="neptune" href="#neptunespeed">Neptune</a>
-    </div>
-    <div id="controls">
+    </section>
+    <section id="controls" aria-labelledby="controls-title">
+        <h2 id="controls-title">Controls</h2>
         <label class="set-view">
-            <input type="checkbox">
+            <input type="checkbox"> Set View
         </label>
         <label class="set-zoom">
-            <input type="checkbox">
+            <input type="checkbox"> Set Zoom
         </label>
         <label>
             <input type="radio" class="set-speed" name="scale" checked>
@@ -42,7 +52,7 @@
             <input type="radio" class="set-distance" name="scale">
             <span>Distance</span>
         </label>
-    </div>
+    </section>
     <div id="universe" class="scale-stretched">
         <div id="galaxy">
             <div id="solar-system" class="earth">
@@ -141,13 +151,5 @@
             </div>
         </div>
     </div>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js" defer></script>
-    <script type="text/javascript" defer>
-        if (typeof jQuery == 'undefined') { 
-            document.write(unescape("%3Cscript src='js/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));
-        }
-    </script>
-    <script src="js/prefixfree.min.js" defer></script>
-    <script src="js/scripts.min.js" defer></script>
 </body>
 </html>
